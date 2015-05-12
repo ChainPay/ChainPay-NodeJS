@@ -1,0 +1,33 @@
+{
+  "name": "chainpay",
+  "version": "0.1.0",
+  "description": "ChainPay API Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.laterooms.com/cm-node-modules/moomin-clients.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "api",
+    "client",
+    "ChainPay",
+    "payments",
+    "gateway"
+  ],
+  "author": "AltXE Limited",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "mocha": "^2.2.4",
+    "proxyquire": "^1.4.0",
+    "linq": ""
+  },
+  "dependencies": {
+    "restler": "~3.2.2",
+    "restler-q": "~0.1.1"
+  }
+}
