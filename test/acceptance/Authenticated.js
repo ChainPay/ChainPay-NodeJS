@@ -10,7 +10,7 @@ describe('Authenticated Acceptance Tests', function () {
             ApiKey: '062d9556a32843468c7ebb111dffcf38'
         };
         return new ChainPayClient(config);
-    }
+    };
 
     it('Can create simple invoice', function(done) {
 
@@ -48,12 +48,31 @@ describe('Authenticated Acceptance Tests', function () {
 
             assert.equal(invoice.RequestAmount, invoiceRequest.RequestAmount);
             assert.equal(invoice.RequestCurrency, invoiceRequest.RequestCurrency);
-            assert.equal(invoice.Reference, invoiceRequest.RequestCurrency);
+            assert.equal(invoice.Reference, invoiceRequest.Reference);
 
             done();
         }).catch(function(e) {
             throw new Error(e);
         })
+    });
+
+    it('Can retreive invoice details', function(done) {
+
+        var amount = 100;
+        var currency = 'GBP';
+        var reference = 'Acceptance:' + (new Date).getTime();
+
+        var client = getClient();
+        client.newInvoice(amount, currency, reference).then(function(invoice) {
+
+            client.getInvoice(invoice.Id).then(function(invoiceDetails) {
+                assert.equal(invoiceDetails.RequestAmount, amount);
+                assert.equal(invoiceDetails.RequestCurrency, currency);
+                assert.equal(invoiceDetails.Reference, reference);
+                done();
+            });
+
+        });
     });
 
 });

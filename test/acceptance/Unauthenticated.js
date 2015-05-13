@@ -19,7 +19,7 @@ describe('Unauthenticated Acceptance Tests', function () {
             assert.equal(rates.any('$.Code=="BTC"'), true)
 
             done();
-        })
+        });
     });
 
 });
