@@ -5,9 +5,9 @@ describe('Signature Validation', function () {
     describe('Unit Tests', function () {
 
         it('should return true for a correct signature', function() {
-            var signature = 'GHZxSwfh0bssRHTrVy8t1/EK6vZyi2QzxnIEMrDqBG8=';
-            var salt = '46BS362cUUOYDutikexQGA==';
-            var body = '{"Expired":"\\/Date(1431520314735)\\/","InvoiceId":"2c14914383064dbea21e694e22ef2b2f","Reference":"Acceptance:1431519718999","State":"Expired"}';
+            var signature = 'BCDdxnIzzFwd5kw9opFKeTuxD4A/PDcO0J/GsdieerE=';
+            var salt = 'wzGe4Bl3ZkeNA+UcWzRMzA==';
+            var body = '{"Created":"\\\/Date(1431820018154)\\\/","InvoiceId":"26a12255073744d5bd2e0ef10c25a8a8","Reference":"Acceptance:1431820014822","State":"Created"}';
 
             var privKey = 'jP0GyySl7EqND9Aar4H7FA==';
 
@@ -25,7 +25,7 @@ describe('Signature Validation', function () {
 
             var isValid = signatureValidation.validate(privKey, signature, salt, body);
 
-            assert.equal(isValid, true);
+            assert.equal(isValid, false);
         });
 
     });
