@@ -36,7 +36,7 @@ describe('Authenticated Acceptance Tests', function () {
             Reference: 'Acceptance:' + (new Date).getTime(),
             ForwardOnPaidUri: 'http://chainpay.com/paid',
             ForwardOnCancelUri: 'http://chainpay.com/cancel',
-            CallbackUri: 'http://requestb.in/ohvk9coh',
+            //CallbackUri: 'http://requestb.in/ohvk9coh', // Get a new URI from requestb.in if you wish to get callback examples.
             CustomData: { UnitTest: true },
             Metadata: {
                 PayerName: 'Unit Test',
